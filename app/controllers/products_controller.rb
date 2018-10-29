@@ -13,7 +13,6 @@ class ProductsController < ApplicationController
 	end
 
 	def show
-		class
 		product = Product.find_by( slug: params[:slug])
 		if product
 			render_success_response(Product.find_by( slug: params[:slug]), 200)
