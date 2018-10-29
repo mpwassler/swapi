@@ -1,4 +1,7 @@
-class OrderController < ApplicationController
+class OrdersController < ApplicationController
+
+	before_action :authorize_as_admin, only: [:destroy]
+
 	def show
 		render_success_response(Order.find(params[:id]), 200)
 	end

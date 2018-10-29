@@ -1,5 +1,7 @@
-class OrderItemController < ApplicationController
+class OrderItemsController < ApplicationController
 	around_action :rescue_from_fk_contraint, only: [:update, :create]
+
+	before_action :authorize_as_admin, only: [:destroy]
 
 	def rescue_from_fk_contraint
 	  begin
